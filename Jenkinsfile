@@ -8,10 +8,7 @@ pipeline{
 
             steps {
 
-                withMaven(maven: 'maven_3_5_0') {
-                    sh 'mvn clean install'
-
-                }
+                sh 'mvn -B -DskipTests clean package'
 
             }
         }
@@ -19,10 +16,7 @@ pipeline{
 
             steps {
 
-                withMaven(maven: 'maven_3_5_0') {
-                    sh 'mvn test'
-
-                }
+                sh 'mvn test'
 
             }
         }
